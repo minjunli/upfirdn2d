@@ -14,12 +14,15 @@ ext_modules = [
                   extra_compile_args={'nvcc': ['--use_fast_math']})
     ]
 
+INSTALL_REQUIREMENTS = ['torch', 'ninja']
+
 setuptools.setup(
     name='upfirdn2d',
     version='0.1',
     description='upfirdn2d',
     author='Minjun Li',
     url='https://github.com/minjunli/upfirdn2d',
+    install_requires=INSTALL_REQUIREMENTS,
     packages=setuptools.find_packages(),
     ext_modules=ext_modules,
     cmdclass={'build_ext': BuildExtension},
